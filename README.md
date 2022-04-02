@@ -88,7 +88,7 @@ User can upload their own collection.
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
 
-<img src=”https://i.imgur.com/ysRRL8f.jpg?1" width=600>
+![alt text](https://i.imgur.com/ysRRL8f.jpg?1 "image Title")
 
 ### [BONUS] Digital Wireframes & Mockups
 
@@ -98,6 +98,17 @@ User can upload their own collection.
 [This section will be completed in Unit 9]
 ### Models
 [Add table of models]
+
+Model: Collection
+|   Property    |      Type     |       Description     |  
+|---------------|---------------|-----------------------|
+|objectId|   string      | Auto generated String for identification|
+|authorId|String|String of Author|
+
+
+
+
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
