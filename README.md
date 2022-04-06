@@ -104,13 +104,14 @@ Model: Collection
 |---------------|---------------|-----------------------|
 |objectId|   string      | Auto generated String for identification|
 |authorId|String|String of Author|
-|||
-|||
-|||
-|||
-|||
-|||
-
+|name|String|Name off the collection
+|subject|List<String>|Name of the collection
+|description|String|Description of flashcard collection
+|flashcards|List<Flashcard>|List of flashcard objects
+|rating|Double|Rating out of 5
+|createdAt|String|Date the collection was created at
+|timesViewed|Integer|Number of times this flashcard collection has been viewed
+|timesDownloaded|Integer|Number of times this flashcard collection has been downloaded
 
 
 
