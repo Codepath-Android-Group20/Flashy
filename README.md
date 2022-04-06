@@ -102,7 +102,7 @@ User can upload their own collection.
 Model: Collection
 |   Property    |      Type     |       Description     |  
 |---------------|---------------|-----------------------|
-|objectId|   string      | Auto generated String for identification|
+|objectId|   String      | Auto generated String for identification|
 |authorId|String|String of Author|
 |name|String|Name off the collection
 |subject|List<String>|Name of the collection
@@ -112,6 +112,14 @@ Model: Collection
 |createdAt|String|Date the collection was created at
 |timesViewed|Integer|Number of times this flashcard collection has been viewed
 |timesDownloaded|Integer|Number of times this flashcard collection has been downloaded
+  
+  Model: Flashcard
+  |   Property    |      Type     |       Description     |  
+  |---------------|---------------|-----------------------|
+  |objectId|   string      | Auto generated String for identification|
+  |front|String|Front text on card|
+  |back|String|Back text on card|
+  |needToLearn|Boolean|Indicator if the user still needs to learn this|
 
 
 
