@@ -97,7 +97,7 @@ User can upload their own collection.
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+
 
 Model: Collection
 |   Property    |      Type     |       Description     |  
@@ -121,6 +121,24 @@ Model: Collection
   |back|String|Back text on card|
   |needToLearn|Boolean|Indicator if the user still needs to learn this|
 
+   Model: Author
+  |   Property    |      Type     |       Description     |  
+  |---------------|---------------|-----------------------|
+  |authorId|   string      | Auto generated String for identification|
+  |flashcardCollections|List<List<Flashcard>>|Collection of this author's flashcard collections|
+  |username|String|User's display name|
+  |password|String|The user's password
+  |dateJoined|Datetime|The date the user signed up|
+  
+   Model: Quiz
+  |   Property    |      Type     |       Description     |  
+  |---------------|---------------|-----------------------|
+  |quizId|   string      | Auto generated String for identification|
+  |score|double|The number of flashcards the user knows|
+  |collections|List<list<flashcards>>|The list of flashcard collections this quiz is made from|
+  |attemptNumber|Integer|The number of times a quiz was attempted|
+  |numQuestions|Integer|The number of slides in this quiz|
+  
 
 
 
