@@ -104,6 +104,13 @@ Model: Collection
 |---------------|---------------|-----------------------|
 |objectId|   string      | Auto generated String for identification|
 |authorId|String|String of Author|
+|||
+|||
+|||
+|||
+|||
+|||
+
 
 
 
