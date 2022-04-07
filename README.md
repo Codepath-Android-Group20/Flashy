@@ -144,7 +144,11 @@ Model: Collection
 
 
 ### Networking
-- [Add list of network requests by screen ]
+- Quiz Screen
+  - (Fetch Collections/GET): user are allowed to choose list of collections he/she wants to be tested on. GET request is used to fetch requested collection
+  - (Update quiz/PUT): update the quiz data model to reflect keep track of user's quiz attempts. 
+  
+  
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
 
