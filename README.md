@@ -145,7 +145,7 @@ Model: Collection
 
 ### Networking
 - Quiz Screen
-  - (Fetch Collections/GET): user are allowed to choose list of collections he/she wants to be tested on. GET request is used to fetch requested collection
+  - (Fetch Collections/GET): user are allowed to choose list of collections he/she wants to be tested on. GET request is used to fetch requested collections. 
   - (Update quiz/PUT): update the quiz data model to reflect keep track of user's quiz attempts. 
   
   
