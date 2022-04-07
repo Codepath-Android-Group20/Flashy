@@ -145,11 +145,24 @@ Model: Collection
 
 ### Networking
 - Quiz Screen
-  - (Fetch Collections/GET): user are allowed to choose list of collections he/she wants to be tested on. GET request is used to fetch requested collections. 
+  - (Read/GET): user are allowed to choose list of collections he/she wants to be tested on. GET request is used to fetch requested collections. 
   - (Update quiz/PUT): update the quiz data model to reflect keep track of user's quiz attempts. 
   
   
-- [Create basic snippets for each Parse network request]
+- // (Read/GET) Query all posts where user is author
+  ```swift
+  let query = PFQuery(className:"Collection")
+  query.include(Collection.Author_ID)
+  // return collections in descending order
+  query.addDescendingOrder("createdAt")
+  query.findObjectsInBackground { (collections: [PFObject]?, error: Error?) in
+  if let error = error {
+     print(error.localizedDescription)
+  } else if let posts = posts {
+     print("Successfully retrieved \(posts.count) posts.")
+     // TODO: Do something with posts...
+     }
+  }
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
 
 App ideas:
