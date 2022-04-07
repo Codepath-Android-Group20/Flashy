@@ -149,7 +149,7 @@ Model: Collection
   - (Update quiz/PUT): update the quiz data model to reflect keep track of user's quiz attempts. 
   
   
-- // (Read/GET) Query all posts where user is author
+- // (Read/GET) Query all collections where user is author
   ```swift
   let query = PFQuery(className:"Collection")
   query.include(Collection.Author_ID)
