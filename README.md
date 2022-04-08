@@ -160,6 +160,8 @@ Model: Collection
   - (Update/PUT): Update a collection the user uploaded
   
   
+  //
+  
 - // (Read/GET) Query all collections where user is author
   ```swift
   let query = PFQuery(className:"Collection")
