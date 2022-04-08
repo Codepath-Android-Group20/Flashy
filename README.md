@@ -148,6 +148,17 @@ Model: Collection
   - (Read/GET): user are allowed to choose list of collections he/she wants to be tested on. GET request is used to fetch requested collections. 
   - (Update quiz/PUT): update the quiz data model to reflect keep track of user's quiz attempts. 
   
+-Login Screen
+  - (Read/GET): Fetch user info to login
+  - (Create/POST): Create a new account/author
+  
+-Home Screen
+  - (Create/POST): Upload a collection
+  - (Read/GET): Check the server for availabe collections
+  - (Read/GET): Download a collection
+  - (Delete/DELETE): Remove a shared collection from the server
+  - (Update/PUT): Update a collection the user uploaded
+  
   
 - // (Read/GET) Query all collections where user is author
   ```swift
