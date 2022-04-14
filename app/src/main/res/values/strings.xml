@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Flashy</string>
+
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <!-- Paste BOTH strings as required -->
+    <string name="back4app_app_id">Yc6Tg4QErS9Z8jcZizd8knPSTcGPq8XFmCQLZIrr</string>
+    <string name="back4app_client_key">IuLBajYGNTJDBRFltg8KORqJRTzafP4u4HyUEljy</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
