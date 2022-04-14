@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2235" />
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/drawable/ic_add_icon.xml" value="0.176" />
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.2235" />
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/drawable/ic_instagram_new_post_outline_24.xml" value="0.2235" />
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2235" />
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/layout/activity_main.xml" value="0.22327898550724637" />
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/layout/collection.xml" value="0.22327898550724637" />
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/layout/my_collection.xml" value="0.264" />
         <entry key="..\:/Users/trung/OneDrive - University of Kentucky/Android App Development/group project/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.1435" />
         <entry key="..\:/Users/trung/OneDrive - University of Kentucky/Android App Development/group project/app/src/main/res/layout/activity_main.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/trung/OneDrive - University of Kentucky/Android App Development/group project/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.25104166666666666" />
