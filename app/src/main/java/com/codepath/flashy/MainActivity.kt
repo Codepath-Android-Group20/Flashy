@@ -3,15 +3,26 @@ package com.codepath.flashy
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import com.codepath.flashy.models.Flashcard
+import com.codepath.flashy.models.Collection
+import com.codepath.flashy.models.Flashcard.Companion.KEY_COLLECTION
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.parse.ParseUser
+import com.parse.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        ParseObject.registerSubclass(Flashcard::class.java)
+        queryFlashcards()
+
+        ParseObject.registerSubclass(Collection::class.java)
+        queryCollections()
 
         findViewById<BottomNavigationView>(R.id.bottom_navigation).setOnItemSelectedListener {
                 item ->
@@ -36,5 +47,51 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    fun queryFlashcards(){
+        val query: ParseQuery<Flashcard> = ParseQuery.getQuery(Flashcard::class.java)
+        query.include(Flashcard.KEY_COLLECTION)
+        query.findInBackground(object: FindCallback<Flashcard>{
+            override fun done(flashcards: MutableList<Flashcard>?, e: ParseException?) {
+                if (e!=null){
+                    Log.e(TAG,"Error fetching flashcards")
+                }else {
+                    if (flashcards != null){
+                        for (flashcard in flashcards){
+                            Log.i(TAG,"Front: " + flashcard.getFront() + " , Back: "+ flashcard.getBack()
+                            + " , Need To Learn: " + flashcard.getLearn() + ", From Collection (need to be fixed into a collection title): "
+                            + flashcard.getCollection().getTitle())
+                        }
+                    }
+                }
+                }
+        })
+    }
+
+    fun queryCollections(){
+        val query: ParseQuery<Collection> = ParseQuery.getQuery(Collection::class.java)
+        query.include(Collection.KEY_AUTHOR)
+        query.findInBackground(object: FindCallback<Collection>{
+            override fun done(collections: MutableList<Collection>?, e: ParseException?) {
+                if (e!=null){
+                    Log.e(TAG,"Error fetching collections")
+                }else {
+                    if (collections != null){
+                        for (collection in collections){
+                            Log.i(TAG,"Collection ID: " + collection.objectId + " , Author: "
+                            + collection.getAuthor()?.username + " , Title: " +  collection.getTitle()
+                            + " , Description: " + collection.getDescription() + " , Rating: " + collection.getRating()
+                            + " , Number of views: " + collection.getTimesViewed() + " , Times Downloaded: "
+                            + collection.getTimesDownloaded() + " ,CreatedAt: " + collection.createdAt)
+                        }
+                    }
+                }
+            }
+        })
+    }
+
+    companion object{
+        const val TAG = "MainActivity"
     }
 }
