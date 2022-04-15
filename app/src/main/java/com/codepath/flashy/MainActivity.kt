@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                         for (flashcard in flashcards){
                             Log.i(TAG,"Front: " + flashcard.getFront() + " , Back: "+ flashcard.getBack()
                             + " , Need To Learn: " + flashcard.getLearn() + ", From Collection (need to be fixed into a collection title): "
-                            + flashcard.getCollectionTitle()?.objectId)
+                            + flashcard.getCollection().getTitle())
                         }
                     }
                 }
