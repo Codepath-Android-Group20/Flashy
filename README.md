@@ -28,7 +28,7 @@ A flashcard app that lets you create and view collections of custom flashcards.
 - **Mobile:**  This app is designed for mobile phones and tablets.
 - **Story:** This app lets you make collections of flashcards. You can give these collections a description and category. You can then view a collection and add flashcards to it. 
 - **Market:** This app is aimed toward people who like to study in short bursts rather than hour long lecture sessions.
-- **Habit:** Flashcards are saved offline and can be viewed anytime. It will offer a feature to quiz yourself on a collection. It will be very easy to just pull up a collection and immediately quiz yourself.
+- **Habit:** It will offer a feature to quiz yourself on a collection. It will be very easy to just pull up a collection and immediately quiz yourself.
 - **Scope:** This app is aimed toward students, but can be used by anyone trying to learn something, like a new language or interview questions.
 
 ## Product Spec
