@@ -38,6 +38,10 @@ class MainActivity : AppCompatActivity() {
                     finish()
                 }
 
+                R.id.action_myCollection->{
+
+                }
+
 
             }
             if (fragmentToShow != null){
