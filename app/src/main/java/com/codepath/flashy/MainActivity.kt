@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.codepath.flashy.models.Flashcard
+import com.codepath.flashy.models.Collection
 import com.codepath.flashy.models.Flashcard.Companion.KEY_COLLECTION
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.parse.*
@@ -18,8 +19,10 @@ class MainActivity : AppCompatActivity() {
 
 
         ParseObject.registerSubclass(Flashcard::class.java)
-
         queryFlashcards()
+
+        ParseObject.registerSubclass(Collection::class.java)
+        queryCollections()
 
         findViewById<BottomNavigationView>(R.id.bottom_navigation).setOnItemSelectedListener {
                 item ->
@@ -56,12 +59,35 @@ class MainActivity : AppCompatActivity() {
                 }else {
                     if (flashcards != null){
                         for (flashcard in flashcards){
-                            Log.i(TAG,"Front: " + flashcard.getFront() + " Back: "+ flashcard.getBack()
-                            + " need to learn: " + flashcard.getLearn() + "from collection: " + flashcard.getCollectionTitle()?.objectId)
+                            Log.i(TAG,"Front: " + flashcard.getFront() + " , Back: "+ flashcard.getBack()
+                            + " , Need To Learn: " + flashcard.getLearn() + ", From Collection (need to be fixed into a collection title): "
+                            + flashcard.getCollectionTitle()?.objectId)
                         }
                     }
                 }
                 }
+        })
+    }
+
+    fun queryCollections(){
+        val query: ParseQuery<Collection> = ParseQuery.getQuery(Collection::class.java)
+        query.include(Collection.KEY_AUTHOR)
+        query.findInBackground(object: FindCallback<Collection>{
+            override fun done(collections: MutableList<Collection>?, e: ParseException?) {
+                if (e!=null){
+                    Log.e(TAG,"Error fetching collections")
+                }else {
+                    if (collections != null){
+                        for (collection in collections){
+                            Log.i(TAG,"Collection ID: " + collection.objectId + " , Author: "
+                            + collection.getAuthor()?.username + " , Title: " +  collection.getTitle()
+                            + " , Description: " + collection.getDescription() + " , Rating: " + collection.getRating()
+                            + " , Number of views: " + collection.getTimesViewed() + " , Times Downloaded: "
+                            + collection.getTimesDownloaded() + " ,CreatedAt: " + collection.createdAt)
+                        }
+                    }
+                }
+            }
         })
     }
 

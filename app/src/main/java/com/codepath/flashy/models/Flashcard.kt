@@ -37,9 +37,11 @@ class Flashcard: ParseObject() {
         return getParseObject(KEY_COLLECTION)
     }
 
-    fun setCollectionTitle(collection: ParseObject){
-        put(KEY_COLLECTION,collection)
+    fun setCollectionTitle(collectionTitle: ParseObject){
+        put (KEY_COLLECTION,collectionTitle)
     }
+
+
 
 
     companion object{
