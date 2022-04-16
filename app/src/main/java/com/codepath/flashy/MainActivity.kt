@@ -50,6 +50,9 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+        findViewById<BottomNavigationView>(R.id.bottom_navigation).selectedItemId = R.id.action_myCollection
+
+
 
     }
 

@@ -51,9 +51,6 @@ class CollectionAdapter(private val context: Context,
 
         override fun onClick(p0: View?) {
             val collection = collections[adapterPosition]
-            Log.i(TAG, "collection id is ${collection.objectId}")
-            Toast.makeText(context,collection.getTitle(), Toast.LENGTH_SHORT).show()
-            Log.i(TAG, "collection description  is ${collection.getDescription()}")
             val intent = Intent(context,CollectionActivity::class.java)
             intent.putExtra(COLLECTION_ID_EXTRA, collection.objectId)
             intent.putExtra(COLLECTION_TITLE_EXTRA, collection.getTitle())
