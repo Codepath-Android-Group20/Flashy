@@ -49,9 +49,10 @@ A flashcard app that lets you create and view collections of custom flashcards.
 - [ ] User can delete a collection of flashcards
 - [ ] A flash card will have information one both sides of it. User can tap flash card to see other side.
 - [ ] User can have multiple collections of flash cards.
+- [ ] Have a toggle indicate the word is learned
 * ...
 
-*  Have a toggle indicate the word is learned
+
 **Optional Nice-to-have Stories**
 - [ ] User can create a quiz out of their flashcards.
 - [ ] User can get notifications during the day for a quiz
