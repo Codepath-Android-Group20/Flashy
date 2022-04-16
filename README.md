@@ -35,11 +35,11 @@ A flashcard app that lets you create and view collections of custom flashcards.
 
 
 <p float="left">
-  <img src="https://i.imgur.com/7dDOCDu.gif" width=250><br>
-  <img src="walkthrough.gif" width=250><br>
+  <img src="https://i.imgur.com/7dDOCDu.gif" width=250><
+  <img src="https://i.imgur.com/7dDOCDu.gif" width=250>
+  <img src="walkthrough.gif" width=250>
 
-</p>>
-<img src="https://i.imgur.com/7dDOCDu.gif" width=250><br>
+</p>
 
 ## Product Spec
 
