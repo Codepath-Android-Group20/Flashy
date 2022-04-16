@@ -26,11 +26,7 @@
        >
 
        <TextView
-<<<<<<< HEAD
            android:id="@+id/tv_term"
-=======
-           android:id="@+id/tv_title"
->>>>>>> origin/create-quiz
            android:layout_width="match_parent"
            android:layout_height="74dp"
            android:gravity="center"
@@ -72,73 +68,102 @@
             tools:text="0/10" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_option_one"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@drawable/default_border"
-        android:gravity="center"
-        android:padding="15dp"
-        android:textColor="#7A8089"
-        android:textSize="18sp"
-        tools:text="Apple" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_option_one"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:background="@drawable/default_border"-->
+<!--        android:gravity="center"-->
+<!--        android:padding="15dp"-->
+<!--        android:textColor="#7A8089"-->
+<!--        android:textSize="18sp"-->
+<!--        tools:text="Apple" />-->
 
-    <TextView
-        android:id="@+id/tv_option_two"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/default_border"
-        android:gravity="center"
-        android:padding="15dp"
-        android:textColor="#7A8089"
-        android:textSize="18sp"
-        tools:text="Google" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_option_two"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:background="@drawable/default_border"-->
+<!--        android:gravity="center"-->
+<!--        android:padding="15dp"-->
+<!--        android:textColor="#7A8089"-->
+<!--        android:textSize="18sp"-->
+<!--        tools:text="Google" />-->
 
-    <TextView
-        android:id="@+id/tv_option_three"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/default_border"
-        android:gravity="center"
-        android:padding="15dp"
-        android:textColor="#7A8089"
-        android:textSize="18sp"
-        tools:text="Android Inc." />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_option_three"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:background="@drawable/default_border"-->
+<!--        android:gravity="center"-->
+<!--        android:padding="15dp"-->
+<!--        android:textColor="#7A8089"-->
+<!--        android:textSize="18sp"-->
+<!--        tools:text="Android Inc." />-->
 
-    <TextView
-        android:id="@+id/tv_option_four"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/default_border"
-        android:gravity="center"
-        android:padding="15dp"
-        android:textColor="#7A8089"
-        android:textSize="18sp"
-        tools:text="Nokia" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_option_four"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:background="@drawable/default_border"-->
+<!--        android:gravity="center"-->
+<!--        android:padding="15dp"-->
+<!--        android:textColor="#7A8089"-->
+<!--        android:textSize="18sp"-->
+<!--        tools:text="Nokia" />-->
 
-    <Button
-        android:id="@+id/btn_submit"
+<!--    <Button-->
+<!--        android:id="@+id/btn_submit"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:background="@color/colorPrimary"-->
+<!--        android:text="SUBMIT"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textStyle="bold" />-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@color/colorPrimary"
-        android:text="SUBMIT"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="20dp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionGo"
+            android:hint="Answer"
+            android:inputType="textCapWords"
+            android:textColor="#363A43"
+            android:textColorHint="#7A8089" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:text="SUBMIT"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
 
 </LinearLayout>

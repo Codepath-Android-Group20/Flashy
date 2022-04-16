@@ -49,8 +49,6 @@ class LoginActivity  : AppCompatActivity() {
             signUpUser(username,password)
             findViewById<EditText>(R.id.etUserName).text.clear()
             findViewById<EditText>(R.id.etPassword).text.clear()
-
-
         }
     }
 
