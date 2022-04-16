@@ -26,7 +26,11 @@
        >
 
        <TextView
+<<<<<<< HEAD
            android:id="@+id/tv_term"
+=======
+           android:id="@+id/tv_title"
+>>>>>>> origin/create-quiz
            android:layout_width="match_parent"
            android:layout_height="74dp"
            android:gravity="center"

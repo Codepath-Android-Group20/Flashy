@@ -2,6 +2,7 @@ package com.codepath.flashy
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+<<<<<<< HEAD
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
@@ -20,10 +21,15 @@ class QuizActivity : AppCompatActivity() {
     private var tv_option_four: TextView? = null
     private var btn_submit: Button? = null
 
+=======
+
+class QuizActivity : AppCompatActivity() {
+>>>>>>> origin/create-quiz
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
 
+<<<<<<< HEAD
         ParseObject.registerSubclass(Flashcard::class.java)
         queryFlashcards()
 
@@ -109,4 +115,9 @@ class QuizActivity : AppCompatActivity() {
     }
 
 
+=======
+
+
+    }
+>>>>>>> origin/create-quiz
 }
