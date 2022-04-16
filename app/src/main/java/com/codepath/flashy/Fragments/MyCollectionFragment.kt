@@ -1,4 +1,4 @@
-package com.codepath.flashy
+package com.codepath.flashy.Fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -8,13 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.codepath.flashy.CollectionAdapter
+import com.codepath.flashy.MainActivity
+import com.codepath.flashy.R
 import com.codepath.flashy.models.Collection
 import com.parse.FindCallback
 import com.parse.ParseException
 import com.parse.ParseQuery
 
-class MyCollectionFragment : Fragment() {
-    lateinit var rvCollection: RecyclerView
+open class MyCollectionFragment : Fragment() {
+    lateinit var rvAllCollections: RecyclerView
     lateinit var adapter: CollectionAdapter
     var displayCollections:ArrayList<Collection> = arrayListOf()
     override fun onCreateView(
@@ -27,10 +30,10 @@ class MyCollectionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        rvCollection= view.findViewById(R.id.rvCollection)
+        rvAllCollections= view.findViewById(R.id.rvAllCollections)
         adapter= CollectionAdapter(requireContext(),displayCollections)
-        rvCollection.adapter=adapter
-        rvCollection.layoutManager= LinearLayoutManager(requireContext())
+        rvAllCollections.adapter=adapter
+        rvAllCollections.layoutManager= LinearLayoutManager(requireContext())
         queryCollection()
 
     }
@@ -45,6 +48,8 @@ class MyCollectionFragment : Fragment() {
                 }else {
                     if (collections != null){
                         displayCollections.addAll(collections)
+                        adapter.notifyDataSetChanged()
+
 //                        for (collection in collections){
 //                            Log.i(
 //                                MainActivity.TAG,"Collection ID: " + collection.objectId + " , Author: "

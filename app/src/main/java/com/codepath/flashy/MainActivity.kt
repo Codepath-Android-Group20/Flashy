@@ -4,11 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import com.codepath.flashy.Fragments.MyCollectionFragment
 import com.codepath.flashy.models.Flashcard
 import com.codepath.flashy.models.Collection
-import com.codepath.flashy.models.Flashcard.Companion.KEY_COLLECTION
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.parse.*
 
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        val fragmentManager: FragmentManager = supportFragmentManager
 
         ParseObject.registerSubclass(Flashcard::class.java)
         queryFlashcards()
@@ -39,13 +39,13 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.action_myCollection->{
-
+                    fragmentToShow= MyCollectionFragment()
                 }
 
 
             }
             if (fragmentToShow != null){
-
+                fragmentManager.beginTransaction().replace(R.id.flContainer, fragmentToShow).commit()
             }
             true
         }
