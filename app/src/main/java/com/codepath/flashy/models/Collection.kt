@@ -1,19 +1,14 @@
 package com.codepath.flashy.models
 
+import android.os.Parcelable
 import com.parse.ParseClassName
 import com.parse.ParseObject
 import com.parse.ParseUser
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @ParseClassName("Collection")
-class Collection: ParseObject(){
-
-    //collection id
-    fun getCollectionId (): String?{
-        return getString(KEY_COLLECTION_ID)
-    }
-    fun setCollectionId(collectionId: String){
-        put(KEY_COLLECTION_ID,collectionId)
-    }
+class Collection: ParseObject(),Parcelable{
 
     //author
     fun getAuthor (): ParseUser?{
