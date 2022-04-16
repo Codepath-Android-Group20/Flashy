@@ -31,28 +31,35 @@ A flashcard app that lets you create and view collections of custom flashcards.
 - **Habit:** It will offer a feature to quiz yourself on a collection. It will be very easy to just pull up a collection and immediately quiz yourself.
 - **Scope:** This app is aimed toward students, but can be used by anyone trying to learn something, like a new language or interview questions.
 
+### App Walkthough GIF (W.I.P.)
+
+
+
+<img src="https://i.imgur.com/7dDOCDu.gif" width=250><br>
+
 ## Product Spec
 
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
 
-User can sign up and log in to their own account
-User can categorize the list of words into classes and subjects
-* User can create a collection flash cards
-User can delete a collection of flashcards
-*A flash card will have information one both sides of it. User can tap flash card to see other side.
-*User can have multiple collections of flash cards.
+- [x] User can sign up and log in to their own account
+- [ ] User can categorize the list of words into classes and subjects
+- [ ] User can create a collection flash cards
+- [ ] User can delete a collection of flashcards
+- [ ] A flash card will have information one both sides of it. User can tap flash card to see other side.
+- [ ] User can have multiple collections of flash cards.
+- [ ] Have a toggle indicate the word is learned
 * ...
 
-*  Have a toggle indicate the word is learned
+
 **Optional Nice-to-have Stories**
-User can create a quiz out of their flashcards.
-User can get notifications during the day for a quiz
-User can print their flashcards
-User can access a database and download other users’ flash card collections
-Online collections can be rated by users and tagged by subject that other users can use to search with.
-User can upload their own collection.
+- [ ] User can create a quiz out of their flashcards.
+- [ ] User can get notifications during the day for a quiz
+- [ ] User can print their flashcards
+- [ ] User can access a database and download other users’ flash card collections
+- [ ] Online collections can be rated by users and tagged by subject that other users can use to search with.
+- [ ] User can upload their own collection.
 
 ### 2. Screen Archetypes
 
