@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.parse.Parse
 import com.parse.ParseObject
@@ -15,6 +16,7 @@ import com.parse.SignUpCallback;
 
 
 class LoginActivity  : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -89,7 +91,7 @@ class LoginActivity  : AppCompatActivity() {
     }
 
     private fun goToMainActivity(){
-        val intent = Intent(this@LoginActivity,MainActivity::class.java)
+        val intent = Intent(this@LoginActivity, QuizActivity::class.java)
         startActivity(intent)
         finish()
     }

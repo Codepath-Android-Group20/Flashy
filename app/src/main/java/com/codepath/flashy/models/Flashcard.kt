@@ -41,9 +41,6 @@ class Flashcard: ParseObject() {
         put (KEY_COLLECTION,collection)
     }
 
-
-
-
     companion object{
         const val KEY_FRONT = "Front"
         const val KEY_BACK = "Back"

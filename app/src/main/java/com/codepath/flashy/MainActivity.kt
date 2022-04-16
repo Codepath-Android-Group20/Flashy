@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.codepath.flashy.models.Flashcard
 import com.codepath.flashy.models.Collection
 import com.codepath.flashy.models.Flashcard.Companion.KEY_COLLECTION
+import com.codepath.flashy.models.Question
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.parse.*
 
@@ -23,6 +25,9 @@ class MainActivity : AppCompatActivity() {
 
         ParseObject.registerSubclass(Collection::class.java)
         queryCollections()
+
+        ParseObject.registerSubclass(Question::class.java)
+        queryQuestion()
 
         findViewById<BottomNavigationView>(R.id.bottom_navigation).setOnItemSelectedListener {
                 item ->
@@ -85,6 +90,31 @@ class MainActivity : AppCompatActivity() {
                             + " , Number of views: " + collection.getTimesViewed() + " , Times Downloaded: "
                             + collection.getTimesDownloaded() + " ,CreatedAt: " + collection.createdAt)
                         }
+                    }
+                }
+            }
+        })
+    }
+
+    fun queryQuestion() {
+        val query: ParseQuery<Question> = ParseQuery.getQuery(Question::class.java)
+        query.include(Question.FLASHCARD)
+//        // return posts in descending order: newer posts will appear first
+//        query.addDescendingOrder("createdAt")
+//        // limit to at most 20 posts
+//        query.limit = 20;
+        // find all post objects
+        query.findInBackground(object: FindCallback<Question> {
+            override fun done(questions: MutableList<Question>?, e: ParseException?) {
+                if (e != null) {
+                    // something has went wrong
+                    Log.e(TAG, "error fetching posts")
+                } else {
+                    if (questions != null) {
+                        for (question in questions) {
+                            Log.i(TAG, "Question: " + question.getTerm() + " Term: " + question.getFlashCard().getFront())
+                        }
+
                     }
                 }
             }
