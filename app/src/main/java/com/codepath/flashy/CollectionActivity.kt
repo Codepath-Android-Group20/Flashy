@@ -1,8 +1,10 @@
 package com.codepath.flashy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,6 +35,12 @@ class CollectionActivity : AppCompatActivity() {
         rvFlashcard.layoutManager = LinearLayoutManager(this)
 
         queryFlascard()
+
+        findViewById<Button>(R.id.btn_quiz).setOnClickListener {
+            val intent = Intent(this, QuizActivity::class.java)
+            intent.putParcelableArrayListExtra("Collection", displayedFlashcards)
+            startActivity(intent)
+        }
 
     }
 
