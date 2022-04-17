@@ -1,6 +1,7 @@
 package com.codepath.flashy
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.view.menu.ActionMenuItemView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.flashy.models.Flashcard
 import org.w3c.dom.Text
@@ -38,13 +40,20 @@ class FlashcardAdapter (private val context: Context,
         init {
             tvKeyword = itemView.findViewById(R.id.tvKeyword)
             tvDescription = itemView.findViewById(R.id.tvDescription)
-            itemView.setOnClickListener(this)
+            itemView.setOnClickListener{
+                val intent = Intent(context, ViewCollectionActivity::class.java)
+                intent.putParcelableArrayListExtra("Collection", flashcards)
+                intent.putExtra("Count", adapterPosition)
+                context.startActivity(intent)
+            }
 
         }
 
         override fun onClick(p0: View?) {
             val flashcard= flashcards[adapterPosition]
-            Toast.makeText(context,flashcard.getFront(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,"" + adapterPosition, Toast.LENGTH_SHORT).show()
+
+
         }
 
         fun bind(flashcard: Flashcard) {
