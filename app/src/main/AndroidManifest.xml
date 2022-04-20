@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flashy">
         <activity
+            android:name=".QuizActivity"
+            android:exported="false" />
+        <activity
             android:name=".CollectionActivity"
             android:exported="false" />
 

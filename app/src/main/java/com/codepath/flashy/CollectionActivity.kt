@@ -40,7 +40,12 @@ class CollectionActivity : AppCompatActivity() {
             val intent = Intent(this,ViewCollectionActivity::class.java);
             intent.putParcelableArrayListExtra("Collection", displayedFlashcards)
             startActivity(intent)
+        }
 
+        findViewById<Button>(R.id.btn_quiz).setOnClickListener {
+            val intent = Intent(this, QuizActivity::class.java)
+            intent.putParcelableArrayListExtra("Collection", displayedFlashcards)
+            startActivity(intent)
         }
     }
 
