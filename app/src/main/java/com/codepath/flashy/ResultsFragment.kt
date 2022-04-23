@@ -33,9 +33,7 @@ class ResultsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //button done take to collection activity
 
-        binding.btnDone.setOnClickListener {
-            findNavController().navigate(R.id.action_myCollection)
-        }
+
     }
 
     override fun onDestroyView() {

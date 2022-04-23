@@ -88,6 +88,7 @@ class QuizActivity : AppCompatActivity() {
                 val intent = Intent(this, ResultsActivity::class.java)
                 intent.putExtra("Score", numCorrect.toString()+"/" + mQuestionsList!!.size.toString())
                 startActivity(intent)
+                finish()
 
             }
         }

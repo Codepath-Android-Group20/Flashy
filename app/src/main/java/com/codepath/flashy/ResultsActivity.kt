@@ -9,6 +9,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.codepath.flashy.databinding.ActivityResultsBinding
 import android.content.Intent
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -38,6 +39,12 @@ class ResultsActivity : AppCompatActivity() {
         results = intent.getStringExtra("Score").toString()
         findViewById<TextView>(R.id.tv_score).text = results
         //Toast.makeText(this, results, Toast.LENGTH_SHORT).show()
+
+       findViewById<Button>(R.id.btn_done).setOnClickListener {
+            //findNavController().navigate(R.id.action_myCollection)
+        finish()
+
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
