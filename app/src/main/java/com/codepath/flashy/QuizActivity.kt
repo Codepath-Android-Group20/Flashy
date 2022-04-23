@@ -1,5 +1,6 @@
 package com.codepath.flashy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -16,6 +17,7 @@ class QuizActivity : AppCompatActivity() {
     private var progressBar: ProgressBar? = null
     private var tv_term: TextView? = null
     private var tvProgress: TextView? = null
+    private var numCorrect: Int = 0
     private lateinit var btn_submit: Button
     private lateinit var btn_nextQuestion: Button
     private var mCurrentPosition: Int = 1 // THE DEFAULT CURRENT POSITION
@@ -54,6 +56,11 @@ class QuizActivity : AppCompatActivity() {
         setQuestion()
         // Adding a click event for submit button. And Change the questions and check the select answers
         btn_submit.setOnClickListener {
+
+            if(mCurrentPosition ==  mQuestionsList!!.size)
+            {
+
+            }
             val question = mQuestionsList?.get(mCurrentPosition - 1)
             val typedAnswer = findViewById<EditText>(R.id.et_answer).text.toString()
 
@@ -62,11 +69,10 @@ class QuizActivity : AppCompatActivity() {
                 Toast.makeText(this, "The answer is wrong", Toast.LENGTH_LONG).show()
             } else {
                 Toast.makeText(this, "The answer is right", Toast.LENGTH_LONG).show()
+                numCorrect++
             }
 
-            if (mCurrentPosition == mQuestionsList!!.size) {
-                btn_submit?.text = "FINISH"
-            }
+
         }
 
         // move to next question
@@ -74,6 +80,16 @@ class QuizActivity : AppCompatActivity() {
             mCurrentPosition++
             if (mCurrentPosition <= mQuestionsList!!.size) {
                 setQuestion()
+            }
+            else{
+                //show results
+                Toast.makeText(this, numCorrect.toString(), Toast.LENGTH_SHORT).show()
+                // new intent results screen
+                val intent = Intent(this, ResultsActivity::class.java)
+                intent.putExtra("Score", numCorrect.toString()+"/" + mQuestionsList!!.size.toString())
+                startActivity(intent)
+                finish()
+
             }
         }
 
@@ -84,8 +100,8 @@ class QuizActivity : AppCompatActivity() {
 
         // check if the position of the question is last then change the text of the button
         if (mCurrentPosition == mQuestionsList!!.size) {
-            btn_submit?.text = "FINISH"
-            btn_submit?.text = "SUBMIT"
+            btn_nextQuestion?.text = "FINISH"
+
         }
 
         // update progressBar
@@ -93,7 +109,7 @@ class QuizActivity : AppCompatActivity() {
         progressBar?.progress = mCurrentPosition
         tvProgress?.text = "$mCurrentPosition" + "/" + progressBar?.max
 
-        // set the curremt question and the options in the UI
+        // set the current question and the options in the UI
         tv_term?.text = question.term
     }
 
