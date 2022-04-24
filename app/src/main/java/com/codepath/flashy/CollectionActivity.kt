@@ -47,6 +47,11 @@ class CollectionActivity : AppCompatActivity() {
             intent.putParcelableArrayListExtra("Collection", displayedFlashcards)
             startActivity(intent)
         }
+
+        findViewById<Button>(R.id.btnDone).setOnClickListener {
+            finish()
+        }
+
     }
 
     private fun queryFlascard() {

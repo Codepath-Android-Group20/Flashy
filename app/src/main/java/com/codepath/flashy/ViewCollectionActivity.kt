@@ -21,9 +21,10 @@ class ViewCollectionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_collection)
         val flashcardList= intent.getParcelableArrayListExtra<Flashcard>("Collection")
+        var number = intent.getIntExtra("Number",0)
 
         if (flashcardList != null) {
-            var count = 0
+            var count = number
             var currentFlashcard = flashcardList[count]
             var isFrontShown = true
             var frontText = currentFlashcard.getFront()
