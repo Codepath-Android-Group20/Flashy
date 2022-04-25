@@ -1,9 +1,9 @@
 Group member:
-Bao Viet Bui
-Wasis Ali
-Tran Le
-Trung Nguyen
-Sumbul Zehra
+Bao Viet Bui, 
+Wasis Ali,
+Tran Le,
+Trung Nguyen,
+Sumbul Zehra, 
 
 Original App Design Project - README
 ===
@@ -50,8 +50,8 @@ A flashcard app that lets you create and view collections of custom flashcards.
 - [ ] User can categorize the list of words into classes and subjects
 - [ ] User can create a collection flash cards
 - [ ] User can delete a collection of flashcards
-- [ ] A flash card will have information one both sides of it. User can tap flash card to see other side.
-- [ ] User can have multiple collections of flash cards.
+- [x] A flash card will have information one both sides of it. User can tap flash card to see other side.
+- [x] User can have multiple collections of flash cards.
 - [ ] Have a toggle indicate the word is learned
 * ...
 
