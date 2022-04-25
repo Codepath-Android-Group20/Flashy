@@ -36,8 +36,8 @@ A flashcard app that lets you create and view collections of custom flashcards.
 
 <p float="left">
   <img src="https://i.imgur.com/7dDOCDu.gif" height="500" >
-  <img src="https://i.imgur.com/Volza81.gif" height="500" >
-  <img src="https://i.imgur.com/2iuSxIO.gif" height="500" >
+  <img src="https://imgur.com/bsv2mzz.gif" height= "500" >
+  <img src="https://imgur.com/KEAKpft.gif" height="500" >
 </p>
 
 ## Product Spec
