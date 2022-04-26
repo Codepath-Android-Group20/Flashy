@@ -1,14 +1,18 @@
 package com.codepath.flashy.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.flashy.CollectionAdapter
+import com.codepath.flashy.CreateCollectionActivity
 import com.codepath.flashy.MainActivity
 import com.codepath.flashy.R
 import com.codepath.flashy.models.Collection
@@ -19,6 +23,7 @@ import com.parse.ParseQuery
 open class MyCollectionFragment : Fragment() {
     lateinit var rvAllCollections: RecyclerView
     lateinit var adapter: CollectionAdapter
+
     var displayCollections:ArrayList<Collection> = arrayListOf()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +41,10 @@ open class MyCollectionFragment : Fragment() {
         rvAllCollections.layoutManager= LinearLayoutManager(requireContext())
         queryCollection()
 
+        view.findViewById<ImageButton>(R.id.ibAddCollection).setOnClickListener {
+            val intent = Intent(requireContext(), CreateCollectionActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun queryCollection() {

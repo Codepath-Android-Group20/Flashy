@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             var fragmentToShow: Fragment? = null
             when (item.itemId){
 
-                R.id.action_Logout ->{
+                R.id.action_Logout -> {
                     ParseUser.logOut()
                     val currentUser = ParseUser.getCurrentUser() // this will now be null
                     val intent = Intent(this ,LoginActivity::class.java)
@@ -41,8 +41,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.action_myCollection->{
                     fragmentToShow= MyCollectionFragment()
                 }
-
-
             }
             if (fragmentToShow != null){
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragmentToShow).commit()
@@ -51,9 +49,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<BottomNavigationView>(R.id.bottom_navigation).selectedItemId = R.id.action_myCollection
-
-
-
     }
 
     fun queryFlashcards(){
