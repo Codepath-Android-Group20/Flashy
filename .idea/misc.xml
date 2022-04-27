@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/drawable/background.xml" value="0.2245" />
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/layout/activity_view_collection.xml" value="0.182518115942029" />
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/layout/content_results.xml" value="0.22509057971014493" />
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/layout/flash_card.xml" value="0.22509057971014493" />
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/layout/item_koloda.xml" value="0.264" />
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/layout/layout.xml" value="0.22509057971014493" />
+        <entry key="..\:/Users/baovi/AndroidStudioProjects/Flashy/app/src/main/res/layout/layout_bg.xml" value="0.22509057971014493" />
         <entry key="..\:/Users/trung/OneDrive - University of Kentucky/Android App Development/group project/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.1435" />
         <entry key="..\:/Users/trung/OneDrive - University of Kentucky/Android App Development/group project/app/src/main/res/layout/activity_main.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/trung/OneDrive - University of Kentucky/Android App Development/group project/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.25104166666666666" />

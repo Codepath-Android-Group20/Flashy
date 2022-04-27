@@ -5,25 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:orientation="vertical"
     tools:context=".ViewCollectionActivity">
+    <?xml version="1.0" encoding="utf-8"?>
+    <com.yalantis.library.Koloda
+        android:id="@+id/koloda"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:koloda_card_layout="@layout/item_koloda" />
 
-    <TextView
-        android:id="@+id/tVFlashcard"
-        android:layout_width="64dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="200dp"
-        android:background="#F8ECD0"
-        android:fontFamily="casual"
-        android:gravity="center|center_vertical"
-        android:scaleX="5"
-        android:scaleY="5"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/tvCardCount"
@@ -32,36 +23,10 @@
         android:layout_marginTop="300dp"
         android:text="TextView"
         android:textSize="34sp"
+        android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tVFlashcard" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/ivNextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:scaleX="3"
-        android:scaleY="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvCardCount"
-        app:layout_constraintTop_toBottomOf="@+id/tVFlashcard"
-        app:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
-
-    <ImageView
-        android:id="@+id/ivPrevButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:scaleX="3"
-        android:scaleY="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvCardCount"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tVFlashcard"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

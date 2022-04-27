@@ -29,20 +29,20 @@ class ViewCollectionActivity : AppCompatActivity() {
             var isFrontShown = true
             var frontText = currentFlashcard.getFront()
             var backText = currentFlashcard.getBack()
-            var showing =findViewById<TextView>(R.id.tVFlashcard)
+            var showing =findViewById<TextView>(R.id.tvFlashcard)
 
             showing.setText(frontText)
             findViewById<TextView>(R.id.tvCardCount).setText ("" + (count + 1) + "/" + (flashcardList.size))
 
 
-            findViewById<TextView>(R.id.tVFlashcard).setOnClickListener {
+            findViewById<TextView>(R.id.tvFlashcard).setOnClickListener {
                 if (isFrontShown){
                     flip(showing)
                     showing.setText(backText)
                     isFrontShown = false
                 }
                 else {
-                    findViewById<TextView>(R.id.tVFlashcard).setText(frontText)
+                    findViewById<TextView>(R.id.tvFlashcard).setText(frontText)
                     flip(showing)
                     isFrontShown = true
                 }
@@ -55,7 +55,7 @@ class ViewCollectionActivity : AppCompatActivity() {
 
                     frontText = currentFlashcard.getFront()
                     backText = currentFlashcard.getBack()
-                    findViewById<TextView>(R.id.tVFlashcard).setText(frontText)
+                    findViewById<TextView>(R.id.tvFlashcard).setText(frontText)
                     findViewById<TextView>(R.id.tvCardCount).setText ("" + (count + 1) + "/" + (flashcardList.size))
                 }
                 else{
@@ -69,7 +69,7 @@ class ViewCollectionActivity : AppCompatActivity() {
                     currentFlashcard = flashcardList.get(count)
                     frontText = currentFlashcard.getFront()
                     backText = currentFlashcard.getBack()
-                    findViewById<TextView>(R.id.tVFlashcard).setText(frontText)
+                    findViewById<TextView>(R.id.tvFlashcard).setText(frontText)
                     findViewById<TextView>(R.id.tvCardCount).setText ("" + (count + 1) + "/" + (flashcardList.size))
                 }
                 else{
