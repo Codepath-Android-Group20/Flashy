@@ -14,6 +14,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etCollectionName" />
 
+    <RatingBar
+        android:id="@+id/rbVoteAvarage"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="4"
+        android:stepSize="0.5"
+        android:layout_marginBottom="10dp"
+        android:isScrollContainer="true"
+        app:layout_constraintBottom_toBottomOf="@+id/rvFlashcard"
+        app:layout_constraintEnd_toEndOf="@+id/rvFlashcard"
+        app:layout_constraintStart_toStartOf="@+id/rvFlashcard" />
+
     <EditText
         android:id="@+id/etFront"
         android:layout_width="0dp"
@@ -27,10 +42,11 @@
     <EditText
         android:id="@+id/etBack"
         android:layout_width="0dp"
-        android:hint="Back of the card"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:hint="Back of the card"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etFront" />
 
@@ -55,16 +71,16 @@
 
         app:layout_constraintTop_toBottomOf="@+id/etBack" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="DONE"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
+<!--    <Button-->
+<!--        android:id="@+id/button2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:text="DONE"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.501"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btnAdd" />-->
 
     <Button
         android:id="@+id/btn_quiz"

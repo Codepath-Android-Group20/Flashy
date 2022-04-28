@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RatingBar
+import android.widget.Toast
 import com.codepath.flashy.models.Collection
 import com.parse.ParseUser
 
@@ -20,18 +21,21 @@ class CreateCollectionActivity : AppCompatActivity() {
             val author = ParseUser.getCurrentUser()
             val title = findViewById<EditText>(R.id.et_title).text.toString()
             val description = findViewById<EditText>(R.id.et_description).text.toString()
-            val rating = findViewById<RatingBar>(R.id.rbVoteAvarage).rating.toDouble()
+//            val rating = findViewById<RatingBar>(R.id.rbVoteAvarage).rating.toDouble()
 
-            createCollection(author, title, description, rating)
+            if (!title.isEmpty() && !title.isEmpty()) {
+                createCollection(author, title, description)
+            } else {
+                Toast.makeText(this, "title and description must not be null", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
-    private fun createCollection(author: ParseUser, title: String, description: String, rating: Double) {
+    private fun createCollection(author: ParseUser, title: String, description: String) {
         val collection = Collection()
         collection.setAuthor(author)
         collection.setTitle(title)
         collection.setDescription(description)
-        collection.setRating(rating)
         collection.saveInBackground { e ->
             if (e != null) {
                 // somethiong has went wrong

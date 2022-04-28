@@ -13,6 +13,7 @@ import com.codepath.flashy.models.Collection
 
 const val COLLECTION_ID_EXTRA ="COLLECTION_EXTRA"
 const val COLLECTION_TITLE_EXTRA ="COLLECTION_NAME_EXTRA"
+const val COLLECTION_OBJECT_EXTRA = "COLLECTION_OBJECT_EXTRA"
 
 class CollectionAdapter(private val context: Context,
                         private val collections: ArrayList<Collection>): RecyclerView.Adapter<CollectionAdapter.ViewHolder>()  {
@@ -46,14 +47,15 @@ class CollectionAdapter(private val context: Context,
         init {
             textView = itemView.findViewById(android.R.id.text1)
             itemView.setOnClickListener(this)
-
         }
 
         override fun onClick(p0: View?) {
             val collection = collections[adapterPosition]
             val intent = Intent(context,CollectionActivity::class.java)
+
             intent.putExtra(COLLECTION_ID_EXTRA, collection.objectId)
             intent.putExtra(COLLECTION_TITLE_EXTRA, collection.getTitle())
+            intent.putExtra(COLLECTION_OBJECT_EXTRA, collection)
             context.startActivity(intent)
         }
     }

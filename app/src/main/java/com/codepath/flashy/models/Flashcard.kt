@@ -32,14 +32,14 @@ class Flashcard: ParseObject() {
         put(KEY_LEARN,learn)
     }
 
-    //    Collection
-    fun getCollection(): Collection {
-        return getParseObject(KEY_COLLECTION) as Collection
-    }
-
-    fun setCollection(collection: Collection){
-        put (KEY_COLLECTION,collection)
-    }
+//    //    Collection
+//    fun getCollection(): Collection {
+//        return getParseObject(KEY_COLLECTION) as Collection
+//    }
+//
+//    fun setCollection(collection: Collection){
+//        put (KEY_COLLECTION, collection)
+//    }
     fun getCollectionID(): String? {
         return getString(KEY_COLLECTION_ID)
     }
@@ -47,11 +47,6 @@ class Flashcard: ParseObject() {
     fun setCollectionID(collectionID:String){
         put (KEY_COLLECTION_ID,collectionID)
     }
-
-
-
-
-
 
     companion object{
         const val KEY_FRONT = "Front"

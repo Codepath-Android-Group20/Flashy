@@ -35,11 +35,12 @@ open class MyCollectionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        queryCollection()
         rvAllCollections= view.findViewById(R.id.rvAllCollections)
-        adapter= CollectionAdapter(requireContext(),displayCollections)
+        adapter= CollectionAdapter(requireContext(), displayCollections)
         rvAllCollections.adapter=adapter
         rvAllCollections.layoutManager= LinearLayoutManager(requireContext())
-        queryCollection()
+
 
         view.findViewById<ImageButton>(R.id.ibAddCollection).setOnClickListener {
             val intent = Intent(requireContext(), CreateCollectionActivity::class.java)
@@ -59,15 +60,15 @@ open class MyCollectionFragment : Fragment() {
                         displayCollections.addAll(collections)
                         adapter.notifyDataSetChanged()
 
-//                        for (collection in collections){
-//                            Log.i(
-//                                MainActivity.TAG,"Collection ID: " + collection.objectId + " , Author: "
-//                                    + collection.getAuthor()?.username + " , Title: " +  collection.getTitle()
-//                                    + " , Description: " + collection.getDescription() + " , Rating: " + collection.getRating()
-//                                    + " , Number of views: " + collection.getTimesViewed() + " , Times Downloaded: "
-//                                    + collection.getTimesDownloaded() + " ,CreatedAt: " + collection.createdAt)
+                        for (collection in collections){
+                            Log.i(
+                                MainActivity.TAG,"Collection ID: " + collection.objectId + " , Author: "
+                                    + collection.getAuthor()?.username + " , Title: " +  collection.getTitle()
+                                    + " , Description: " + collection.getDescription() + " , Rating: " + collection.getRating()
+                                    + " , Number of views: " + collection.getTimesViewed() + " , Times Downloaded: "
+                                    + collection.getTimesDownloaded() + " ,CreatedAt: " + collection.createdAt)
 
-//                        }
+                        }
                     }
                 }
             }

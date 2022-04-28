@@ -11,7 +11,7 @@ import kotlinx.parcelize.Parcelize
 class Collection: ParseObject(),Parcelable{
 
     //author
-    fun getAuthor (): ParseUser?{
+    fun getAuthor(): ParseUser?{
         return getParseUser(KEY_AUTHOR)
     }
     fun setAuthor(author: ParseUser){
