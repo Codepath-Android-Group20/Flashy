@@ -24,9 +24,9 @@ class CollectionAdapter(private val context: Context,
         val context = parent.context
         val inflater = LayoutInflater.from(context)
         // Inflate the custom layout
-        val contactView = inflater.inflate(android.R.layout.simple_list_item_1, parent, false)
+        val view = inflater.inflate(android.R.layout.simple_list_item_1, parent, false)
         // Return a new holder instance
-        return ViewHolder(contactView)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: CollectionAdapter.ViewHolder, position: Int) {

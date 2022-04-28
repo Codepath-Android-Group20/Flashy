@@ -33,13 +33,14 @@ class Flashcard: ParseObject() {
     }
 
     //    Collection
-    fun getCollection(): Collection {
-        return getParseObject(KEY_COLLECTION) as Collection
-    }
+//    fun getCollection(): Collection {
+//        return getParseObject(KEY_COLLECTION) as Collection
+//    }
+//
+//    fun setCollection(collection: Collection){
+//        put (KEY_COLLECTION,collection)
+//    }
 
-    fun setCollection(collection: Collection){
-        put (KEY_COLLECTION,collection)
-    }
     fun getCollectionID(): String? {
         return getString(KEY_COLLECTION_ID)
     }
