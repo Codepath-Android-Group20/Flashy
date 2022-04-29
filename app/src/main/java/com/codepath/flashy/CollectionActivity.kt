@@ -49,6 +49,7 @@ class CollectionActivity : AppCompatActivity() {
         }
     }
 
+
     private fun queryFlascard() {
         val query: ParseQuery<Flashcard> = ParseQuery.getQuery(Flashcard::class.java)
         query.include(Flashcard.KEY_COLLECTION)

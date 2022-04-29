@@ -33,6 +33,8 @@ class CollectionAdapter(private val context: Context,
         val item: String? = collections[position].getTitle()
 
         holder.textView.text = item
+
+
     }
 
 
@@ -42,12 +44,18 @@ class CollectionAdapter(private val context: Context,
 
     inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView), View.OnClickListener {
         val textView: TextView
+        val collectionTitle:TextView
 
         init {
             textView = itemView.findViewById(android.R.id.text1)
             itemView.setOnClickListener(this)
-
+            collectionTitle = itemView.findViewById(R.id.collectionTitle)
         }
+
+        fun bind(collection:CollectionActivity){
+            collectionTitle.text  = collection.title
+        }
+
 
         override fun onClick(p0: View?) {
             val collection = collections[adapterPosition]
