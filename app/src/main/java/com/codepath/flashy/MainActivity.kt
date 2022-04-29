@@ -19,10 +19,10 @@ class MainActivity : AppCompatActivity() {
         val fragmentManager: FragmentManager = supportFragmentManager
 
         ParseObject.registerSubclass(Flashcard::class.java)
-        queryFlashcards()
+//        queryFlashcards()
 
         ParseObject.registerSubclass(Collection::class.java)
-        queryCollections()
+//        queryCollections()
 
         findViewById<BottomNavigationView>(R.id.bottom_navigation).setOnItemSelectedListener {
                 item ->

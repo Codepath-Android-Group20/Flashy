@@ -77,7 +77,7 @@ open class MyCollectionFragment : Fragment() {
         query.findInBackground(object: FindCallback<Collection> {
             override fun done(collections: MutableList<Collection>?, e: ParseException?) {
                 if (e!=null){
-                    Log.e(MainActivity.TAG,"Error fetching collections")
+                    Log.e(TAG,"Error fetching collections")
                 }else {
                     if (collections != null){
 //                        for (collection in collections){

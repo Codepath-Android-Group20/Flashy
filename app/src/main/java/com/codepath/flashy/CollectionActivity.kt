@@ -101,7 +101,7 @@ class CollectionActivity : AppCompatActivity() {
         query.findInBackground(object: FindCallback<Flashcard> {
             override fun done(flashcards: MutableList<Flashcard>?, e: ParseException?) {
                 if (e!=null){
-                    Log.e(MainActivity.TAG,"Error fetching flashcards")
+                    Log.e(TAG,"Error fetching flashcards")
                 }else {
                     if (flashcards != null){
                         displayedFlashcards.addAll(flashcards)
