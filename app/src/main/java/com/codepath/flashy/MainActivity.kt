@@ -65,11 +65,11 @@ class MainActivity : AppCompatActivity() {
                     Log.e(TAG,"Error fetching flashcards")
                 }else {
                     if (flashcards != null){
-                        for (flashcard in flashcards){
-                            Log.i(TAG,"Front: " + flashcard.getFront() + " , Back: "+ flashcard.getBack()
-                            + " , Need To Learn: " + flashcard.getLearn() + ", From Collection (need to be fixed into a collection title): "
-                            + flashcard.getCollection().getTitle())
-                        }
+//                        for (flashcard in flashcards){
+//                            Log.i(TAG,"Front: " + flashcard.getFront() + " , Back: "+ flashcard.getBack()
+//                            + " , Need To Learn: " + flashcard.getLearn() + ", From Collection (need to be fixed into a collection title): "
+//                            + flashcard.getCollection().getTitle())
+//                        }
                     }
                 }
                 }
