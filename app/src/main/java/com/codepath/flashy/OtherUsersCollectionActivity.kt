@@ -1,6 +1,5 @@
 package com.codepath.flashy
 
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -8,7 +7,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.RatingBar
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,7 +18,7 @@ import com.parse.ParseObject
 import com.parse.ParseQuery
 
 
-class CollectionActivity : AppCompatActivity() {
+class OtherUsersCollectionActivity : AppCompatActivity() {
     lateinit var collectionID: String
     lateinit var rvFlashcard: RecyclerView
     lateinit var flashcardAdapter:FlashcardAdapter
@@ -29,7 +27,7 @@ class CollectionActivity : AppCompatActivity() {
     val displayedFlashcards:ArrayList<Flashcard> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_collection)
+        setContentView(R.layout.activity_other_users_collection)
         rvFlashcard= findViewById(R.id.rvFlashcard)
         flashcardAdapter=FlashcardAdapter(this, displayedFlashcards)
         collectionID = intent.getStringExtra(COLLECTION_ID_EXTRA).toString()
@@ -53,18 +51,7 @@ class CollectionActivity : AppCompatActivity() {
             finish()
         }
 
-        findViewById<Button>(R.id.btnAdd).setOnClickListener {
-            val front = findViewById<EditText>(R.id.etFront).text.toString()
-            val back = findViewById<EditText>(R.id.etBack).text.toString()
-            if (front.isNotEmpty() && back.isNotEmpty()) {
-                createFlashCard(front, back, true, collectionID)
-                findViewById<EditText>(R.id.etFront).text.clear()
-                findViewById<EditText>(R.id.etBack).text.clear()
-                Toast.makeText(this, "Flashcard is added", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Front and Back must not be empty", Toast.LENGTH_SHORT).show()
-            }
-        }
+
 
 //        findViewById<Button>(R.id.btnDone).setOnClickListener {
 //            // initiating a rating bar
@@ -130,7 +117,7 @@ class CollectionActivity : AppCompatActivity() {
             if (e == null) {
                 // Now let's update it with some new data. In this case, only cheatMode and score
                 // will get sent to the Parse Cloud. playerName hasn't changed.
-               collection.put("rating", ratingNum)
+                collection.put("rating", ratingNum)
                 collection.saveInBackground()
                 Log.i(TAG, "Rating bar of $collectionID is updated")
             } else {

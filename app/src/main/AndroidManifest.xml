@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flashy">
         <activity
+            android:name=".OtherUsersCollectionActivity"
+            android:exported="false"
+            android:label="@string/title_activity_other_users_collection"
+            android:theme="@style/Theme.Flashy.NoActionBar" />
+        <activity
             android:name=".CreateCollectionActivity"
             android:exported="false" />
         <activity

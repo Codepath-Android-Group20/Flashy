@@ -76,6 +76,7 @@ open class MyCollectionFragment : Fragment() {
             displayCollections.clear()
             queryCollection()
         }
+
     }
 
     private fun queryCollection() {

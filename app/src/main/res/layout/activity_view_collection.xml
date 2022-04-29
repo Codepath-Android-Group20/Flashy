@@ -18,12 +18,16 @@
         android:scaleX="5"
         android:scaleY="5"
         android:text="TextView"
+        android:textSize="4sp"
         android:textAlignment="center"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:maxLines="4"
+        android:maxLength="50"
+        android:ellipsize="end"/>
 
     <TextView
         android:id="@+id/tvCardCount"
@@ -35,7 +39,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tVFlashcard" />
+        app:layout_constraintTop_toBottomOf="@+id/tVFlashcard"
+        />
 
     <ImageView
         android:id="@+id/ivNextButton"
