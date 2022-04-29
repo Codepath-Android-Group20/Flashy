@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             override fun done(flashcards: MutableList<Flashcard>?, e: ParseException?) {
                 if (e!=null){
                     Log.e(TAG,"Error fetching flashcards")
+                    e.printStackTrace()
                 }else {
                     if (flashcards != null){
 //                        for (flashcard in flashcards){
