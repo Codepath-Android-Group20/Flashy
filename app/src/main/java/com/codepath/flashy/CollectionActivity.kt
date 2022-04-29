@@ -62,16 +62,16 @@ class CollectionActivity : AppCompatActivity() {
             }
         }
 
-        findViewById<Button>(R.id.btnDone).setOnClickListener {
-            // initiating a rating bar
-            ratingBar = findViewById(R.id.rbVoteAvarage)
-            // get a rating number from the rating bar
-            var ratingNum: Number = ratingBar.rating
-
-            updateRatingCollection(collectionID, ratingNum)
-
-            finish()
-        }
+//        findViewById<Button>(R.id.btnDone).setOnClickListener {
+//            // initiating a rating bar
+//            ratingBar = findViewById(R.id.rbVoteAvarage)
+//            // get a rating number from the rating bar
+//            var ratingNum: Number = ratingBar.rating
+//
+//            updateRatingCollection(collectionID, ratingNum)
+//
+//            finish()
+//        }
     }
 
     private fun createFlashCard(front: String, back: String, needToLearn: Boolean, collectionID: String) {
