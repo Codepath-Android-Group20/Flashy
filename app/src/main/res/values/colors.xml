@@ -91,4 +91,14 @@
 
     <color name="group_button_dialog_pressed_holo_light">#ffffffff</color>
     <color name="group_button_dialog_focused_holo_light">#4699cc00</color>
+
+
+    <color name="orange">#ff7c4b</color>
+    <color name="teal">#4ac8c6</color>
+    <color name="blue">#4ac8c6</color>
+    <color name="purple">#3e3974</color>
+    <color name="yellow">#fbb72c</color>
+    <color name="pink">#f75d76</color>
+    <color name="light_yellow">#fff5e2</color>
+
 </resources>
