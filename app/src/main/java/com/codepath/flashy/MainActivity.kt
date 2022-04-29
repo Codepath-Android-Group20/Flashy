@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.codepath.flashy.Fragments.MyCollectionFragment
+import com.codepath.flashy.Fragments.OnlineCollectionFragment
 import com.codepath.flashy.models.Flashcard
 import com.codepath.flashy.models.Collection
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -40,6 +41,9 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.action_myCollection->{
                     fragmentToShow= MyCollectionFragment()
+                }
+                R.id.action_onlineCollection->{
+                    fragmentToShow= OnlineCollectionFragment()
                 }
 
 

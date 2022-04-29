@@ -23,7 +23,7 @@ import com.parse.ParseException
 import com.parse.ParseQuery
 import com.parse.ParseUser
 
-open class MyCollectionFragment : Fragment() {
+open class OnlineCollectionFragment : Fragment() {
     lateinit var rvAllCollections: RecyclerView
     lateinit var adapter: CollectionAdapter
     lateinit var swipeContainer: SwipeRefreshLayout
@@ -33,7 +33,7 @@ open class MyCollectionFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_collection, container, false)
+        return inflater.inflate(R.layout.fragment_online_collection, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -69,13 +69,7 @@ open class MyCollectionFragment : Fragment() {
 
         queryCollection()
 
-        view.findViewById<ImageButton>(R.id.ibAddCollection).setOnClickListener {
-            val intent = Intent(requireContext(), CreateCollectionActivity::class.java)
-            startActivity(intent)
-            Log.i(TAG, "refreshing timeline")
-            displayCollections.clear()
-            queryCollection()
-        }
+
     }
 
     private fun queryCollection() {
@@ -99,13 +93,14 @@ open class MyCollectionFragment : Fragment() {
 //                        }
                         var mycollections: MutableList<Collection> = mutableListOf()
                         for (i in 0..collections.size -1){
-                          if (collections[i] != null && collections[i].getAuthor()!!.get("username") == ParseUser.getCurrentUser().get("username")){
+                            if (collections[i] != null && collections[i].getAuthor()!!.get("username") == ParseUser.getCurrentUser().get("username")){
                                 mycollections.add(collections[i])
 
 
-                          }
+                            }
                         }
-                        displayCollections.addAll(mycollections)
+                        displayCollections.addAll(collections)
+
                         adapter.notifyDataSetChanged()
                         swipeContainer.isRefreshing = false
                     }
