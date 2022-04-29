@@ -28,6 +28,8 @@ class CreateCollectionActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "title and description must not be null", Toast.LENGTH_SHORT).show()
             }
+
+            finish()
         }
     }
 

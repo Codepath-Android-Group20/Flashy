@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.codepath.flashy.CollectionAdapter
 import com.codepath.flashy.CreateCollectionActivity
 import com.codepath.flashy.MainActivity
@@ -22,8 +23,8 @@ import com.parse.ParseQuery
 open class MyCollectionFragment : Fragment() {
     lateinit var rvAllCollections: RecyclerView
     lateinit var adapter: CollectionAdapter
-
-    var displayCollections:ArrayList<Collection> = arrayListOf()
+    lateinit var swipeContainer: SwipeRefreshLayout
+    var displayCollections:MutableList<Collection> = mutableListOf<Collection>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,12 +35,35 @@ open class MyCollectionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        queryCollection()
+
         rvAllCollections= view.findViewById(R.id.rvAllCollections)
+
         adapter= CollectionAdapter(requireContext(), displayCollections)
         rvAllCollections.adapter=adapter
         rvAllCollections.layoutManager= LinearLayoutManager(requireContext())
 
+
+        // Setup refresh listener which triggers new data loading
+        // locate the swip container view
+        swipeContainer = view.findViewById(R.id.swipeContainer)
+
+        swipeContainer.setOnRefreshListener {
+            // Your code to refresh the list here.
+            // Make sure you call swipeContainer.setRefreshing(false)
+            // once the network request has completed successfully.
+            Log.i(TAG, "refreshing timeline")
+            queryCollection()
+        }
+
+        // Configure the refreshing colors
+        swipeContainer.setColorSchemeResources(
+            android.R.color.holo_blue_bright,
+            android.R.color.holo_green_light,
+            android.R.color.holo_orange_light,
+            android.R.color.holo_red_light
+        );
+
+        queryCollection()
 
         view.findViewById<ImageButton>(R.id.ibAddCollection).setOnClickListener {
             val intent = Intent(requireContext(), CreateCollectionActivity::class.java)
@@ -56,21 +80,26 @@ open class MyCollectionFragment : Fragment() {
                     Log.e(MainActivity.TAG,"Error fetching collections")
                 }else {
                     if (collections != null){
+//                        for (collection in collections){
+//                            Log.i(
+//                                MainActivity.TAG,"Collection ID: " + collection.objectId + " , Author: "
+//                                        + collection.getAuthor()?.username + " , Title: " +  collection.getTitle()
+//                                        + " , Description: " + collection.getDescription() + " , Rating: " + collection.getRating()
+//                                        + " , Number of views: " + collection.getTimesViewed() + " , Times Downloaded: "
+//                                        + collection.getTimesDownloaded() + " ,CreatedAt: " + collection.createdAt)
+//
+//                        }
+
                         displayCollections.addAll(collections)
                         adapter.notifyDataSetChanged()
-
-                        for (collection in collections){
-                            Log.i(
-                                MainActivity.TAG,"Collection ID: " + collection.objectId + " , Author: "
-                                        + collection.getAuthor()?.username + " , Title: " +  collection.getTitle()
-                                        + " , Description: " + collection.getDescription() + " , Rating: " + collection.getRating()
-                                        + " , Number of views: " + collection.getTimesViewed() + " , Times Downloaded: "
-                                        + collection.getTimesDownloaded() + " ,CreatedAt: " + collection.createdAt)
-
-                        }
+                        swipeContainer.isRefreshing = false
                     }
                 }
             }
         })
+    }
+
+    companion object {
+        const val TAG = "MyCollectionFragment"
     }
 }

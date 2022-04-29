@@ -56,6 +56,7 @@ class CollectionActivity : AppCompatActivity() {
             val back = findViewById<EditText>(R.id.etBack).text.toString()
             if (front.isNotEmpty() && back.isNotEmpty()) {
                 createFlashCard(front, back, true, collectionID)
+                Toast.makeText(this, "Flashcard is added", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Front and Back must not be empty", Toast.LENGTH_SHORT).show()
             }
