@@ -51,6 +51,10 @@ class CollectionActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        findViewById<Button>(R.id.btnDone).setOnClickListener{
+            finish()
+        }
+
         findViewById<Button>(R.id.btnAdd).setOnClickListener {
             val front = findViewById<EditText>(R.id.etFront).text.toString()
             val back = findViewById<EditText>(R.id.etBack).text.toString()
