@@ -10,6 +10,9 @@
     <color name="colorPrimary">#FF9013FE</color>
     <color name="colorPrimaryDark">#FF6A1B9A</color>
     <color name="colorAccent">#FF9013FE</color>
+    <color name="colorTransparent">#00FFFFFF</color>
+
+
     <drawable name="input_method_fullscreen_background_holo">@drawable/screen_background_holo_dark</drawable>
 
     <drawable name="screen_background_holo_light">#fff3f3f3</drawable>
@@ -91,4 +94,14 @@
 
     <color name="group_button_dialog_pressed_holo_light">#ffffffff</color>
     <color name="group_button_dialog_focused_holo_light">#4699cc00</color>
+
+
+    <color name="orange">#ff7c4b</color>
+    <color name="teal">#4ac8c6</color>
+    <color name="blue">#4ac8c6</color>
+    <color name="purple">#3e3974</color>
+    <color name="yellow">#fbb72c</color>
+    <color name="pink">#f75d76</color>
+    <color name="light_yellow">#fff5e2</color>
+
 </resources>
