@@ -65,6 +65,7 @@ class FlashcardAdapter (private val context: Context,
 
         override fun onLongClick(p0: View?): Boolean {
 
+
             val flashcard= flashcards[adapterPosition]
 
 

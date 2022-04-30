@@ -92,6 +92,9 @@ class CollectionActivity : AppCompatActivity() {
                 // show toast to tell user something went wrong with saving post
             } else {
                 Log.i(TAG, "Succeessfully save flashcard")
+                displayedFlashcards.add(flashcard)
+                flashcardAdapter.notifyDataSetChanged()
+                Toast.makeText(this, "Flashcard Added", Toast.LENGTH_SHORT)
                 // TODO: resetting the EditText field to be empty
                 // TODO: reset the ImageView to empty
             }

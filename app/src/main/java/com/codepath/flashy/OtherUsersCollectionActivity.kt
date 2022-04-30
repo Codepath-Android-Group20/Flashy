@@ -21,7 +21,7 @@ import com.parse.ParseQuery
 class OtherUsersCollectionActivity : AppCompatActivity() {
     lateinit var collectionID: String
     lateinit var rvFlashcard: RecyclerView
-    lateinit var flashcardAdapter:FlashcardAdapter
+    lateinit var flashcardAdapter:OtherUsersFlashcardAdapter
     lateinit var collection: Collection
     lateinit var ratingBar: RatingBar
     val displayedFlashcards:ArrayList<Flashcard> = arrayListOf()
@@ -29,7 +29,7 @@ class OtherUsersCollectionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_other_users_collection)
         rvFlashcard= findViewById(R.id.rvFlashcard)
-        flashcardAdapter=FlashcardAdapter(this, displayedFlashcards)
+        flashcardAdapter=OtherUsersFlashcardAdapter(this, displayedFlashcards)
         collectionID = intent.getStringExtra(COLLECTION_ID_EXTRA).toString()
         val collectionTitle = intent.getStringExtra(COLLECTION_TITLE_EXTRA).toString()
         findViewById<EditText>(R.id.etCollectionName).setText(collectionTitle)
