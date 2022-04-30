@@ -4,10 +4,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RatingBar
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,7 +30,7 @@ class CollectionActivity : AppCompatActivity() {
         flashcardAdapter=FlashcardAdapter(this, displayedFlashcards)
         collectionID = intent.getStringExtra(COLLECTION_ID_EXTRA).toString()
         val collectionTitle = intent.getStringExtra(COLLECTION_TITLE_EXTRA).toString()
-        findViewById<EditText>(R.id.etCollectionName).setText(collectionTitle)
+        findViewById<TextView>(R.id.etCollectionName).setText(collectionTitle)
 //        if (collection!=null)
         Log.i(TAG, "collection is $collectionID")
 //        else
