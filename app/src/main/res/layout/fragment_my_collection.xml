@@ -6,20 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.MyCollectionFragment">
 
-    <ImageButton
-        android:id="@+id/ibAddCollection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_instagram_new_post_outline_24" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintTop_toTopOf="parent"
         android:background="@color/yellow">
 
         <TextView
@@ -43,7 +35,6 @@
             android:textSize="20dp"
             android:textColor="@color/light_yellow"
             android:layout_marginLeft="30dp"
-            app:layout_constraintBottom_toTopOf="@+id/swipeContainer"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -67,9 +58,19 @@
             android:layout_height="match_parent"
             android:layout_gravity="bottom"
             android:layout_alignParentBottom="true" />
+
+
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-
+    <ImageButton
+        android:id="@+id/ibAddCollection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_instagram_new_post_outline_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

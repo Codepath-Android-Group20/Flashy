@@ -10,6 +10,9 @@
     <color name="colorPrimary">#FF9013FE</color>
     <color name="colorPrimaryDark">#FF6A1B9A</color>
     <color name="colorAccent">#FF9013FE</color>
+    <color name="colorTransparent">#00FFFFFF</color>
+
+
     <drawable name="input_method_fullscreen_background_holo">@drawable/screen_background_holo_dark</drawable>
 
     <drawable name="screen_background_holo_light">#fff3f3f3</drawable>

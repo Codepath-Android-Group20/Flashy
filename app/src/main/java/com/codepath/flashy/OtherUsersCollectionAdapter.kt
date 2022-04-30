@@ -12,16 +12,16 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.flashy.models.Collection
 
-const val COLLECTION_ID_EXTRA ="COLLECTION_EXTRA"
-const val COLLECTION_TITLE_EXTRA ="COLLECTION_NAME_EXTRA"
+const val OTHER_COLLECTION_ID_EXTRA ="COLLECTION_EXTRA"
+const val OTHER_COLLECTION_TITLE_EXTRA ="COLLECTION_NAME_EXTRA"
 
-class CollectionAdapter(private val context: Context,
-                        private val collections: MutableList<Collection>): RecyclerView.Adapter<CollectionAdapter.ViewHolder>()  {
+class OtherUsersCollectionAdapter(private val context: Context,
+                        private val collections: MutableList<Collection>): RecyclerView.Adapter<OtherUsersCollectionAdapter.ViewHolder>()  {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): CollectionAdapter.ViewHolder {
+    ): OtherUsersCollectionAdapter.ViewHolder {
 //        val context = parent.context
 //        val inflater = LayoutInflater.from(context)
 //        // Inflate the custom layout
@@ -33,7 +33,7 @@ class CollectionAdapter(private val context: Context,
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: CollectionAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: OtherUsersCollectionAdapter.ViewHolder, position: Int) {
         val collection = collections[position]
         holder.bind(collection)
 
@@ -46,20 +46,20 @@ class CollectionAdapter(private val context: Context,
 
     inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView), View.OnClickListener {
         val tv_collectionName: TextView
-        val tv_authorName: TextView
         val tv_collectionDescription: TextView
-
+        val tv_authorName: TextView
         init {
             tv_collectionName = itemView.findViewById(R.id.tv_collectionName)
-            tv_collectionDescription = itemView.findViewById(R.id.tv_collectionDescription)
             tv_authorName= itemView.findViewById(R.id.tvAuthorName)
+            tv_collectionDescription = itemView.findViewById(R.id.tv_collectionDescription)
             itemView.setOnClickListener(this)
 
         }
 
         override fun onClick(p0: View?) {
             val collection = collections[adapterPosition]
-            val intent = Intent(context,CollectionActivity::class.java)
+
+            val intent = Intent(context,OtherUsersCollectionActivity::class.java)
             intent.putExtra(COLLECTION_ID_EXTRA, collection.objectId)
             intent.putExtra(COLLECTION_TITLE_EXTRA, collection.getTitle())
             context.startActivity(intent)

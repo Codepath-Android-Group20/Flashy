@@ -13,10 +13,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.codepath.flashy.CollectionAdapter
-import com.codepath.flashy.CreateCollectionActivity
-import com.codepath.flashy.MainActivity
-import com.codepath.flashy.R
+import com.codepath.flashy.*
 import com.codepath.flashy.models.Collection
 import com.parse.FindCallback
 import com.parse.ParseException
@@ -25,7 +22,7 @@ import com.parse.ParseUser
 
 open class OnlineCollectionFragment : Fragment() {
     lateinit var rvAllCollections: RecyclerView
-    lateinit var adapter: CollectionAdapter
+    lateinit var adapter: OtherUsersCollectionAdapter
     lateinit var swipeContainer: SwipeRefreshLayout
     var displayCollections:MutableList<Collection> = mutableListOf<Collection>()
     override fun onCreateView(
@@ -41,7 +38,7 @@ open class OnlineCollectionFragment : Fragment() {
 
         rvAllCollections= view.findViewById(R.id.rvAllCollections)
 
-        adapter= CollectionAdapter(requireContext(), displayCollections)
+        adapter= OtherUsersCollectionAdapter(requireContext(), displayCollections)
         rvAllCollections.adapter=adapter
         rvAllCollections.layoutManager= LinearLayoutManager(requireContext())
 
