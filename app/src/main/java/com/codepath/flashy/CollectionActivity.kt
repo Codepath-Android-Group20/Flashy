@@ -122,22 +122,22 @@ class CollectionActivity : AppCompatActivity() {
         })
     }
 
-    private fun updateRatingCollection(collectionID: String, ratingNum: Number) {
-        val query = ParseQuery.getQuery<ParseObject>("Collection")
-        // Retrieve the object by id
-        // Retrieve the object by id
-        query.getInBackground(collectionID) { collection, e ->
-            if (e == null) {
-                // Now let's update it with some new data. In this case, only cheatMode and score
-                // will get sent to the Parse Cloud. playerName hasn't changed.
-               collection.put("rating", ratingNum)
-                collection.saveInBackground()
-                Log.i(TAG, "Rating bar of $collectionID is updated")
-            } else {
-                Log.i(TAG, "rating bar of $collectionID fails")
-            }
-        }
-    }
+//    private fun updateRatingCollection(collectionID: String, ratingNum: Number) {
+//        val query = ParseQuery.getQuery<ParseObject>("Collection")
+//        // Retrieve the object by id
+//        // Retrieve the object by id
+//        query.getInBackground(collectionID) { collection, e ->
+//            if (e == null) {
+//                // Now let's update it with some new data. In this case, only cheatMode and score
+//                // will get sent to the Parse Cloud. playerName hasn't changed.
+//               collection.put("rating", ratingNum)
+//                collection.saveInBackground()
+//                Log.i(TAG, "Rating bar of $collectionID is updated")
+//            } else {
+//                Log.i(TAG, "rating bar of $collectionID fails")
+//            }
+//        }
+//    }
 
     companion object{
         const val TAG="CollectionActivity"
