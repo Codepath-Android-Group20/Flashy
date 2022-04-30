@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/flashCard"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="60dp">
+
 
     <TextView
         android:id="@+id/tvKeyword"
@@ -25,6 +26,8 @@
         android:ellipsize="end"
         android:maxLines="2"
         android:text="This is a long definition of the keyword"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvKeyword"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

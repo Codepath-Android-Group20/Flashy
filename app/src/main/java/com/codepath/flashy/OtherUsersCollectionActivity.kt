@@ -23,7 +23,6 @@ class OtherUsersCollectionActivity : AppCompatActivity() {
     lateinit var rvFlashcard: RecyclerView
     lateinit var flashcardAdapter:OtherUsersFlashcardAdapter
     lateinit var collection: Collection
-    lateinit var ratingBar: RatingBar
     val displayedFlashcards:ArrayList<Flashcard> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

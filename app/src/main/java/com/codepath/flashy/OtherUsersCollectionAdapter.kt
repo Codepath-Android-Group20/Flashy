@@ -46,11 +46,11 @@ class OtherUsersCollectionAdapter(private val context: Context,
 
     inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView), View.OnClickListener {
         val tv_collectionName: TextView
-//        val ratingBar: RatingBar
         val tv_collectionDescription: TextView
+        val tv_authorName: TextView
         init {
             tv_collectionName = itemView.findViewById(R.id.tv_collectionName)
-//            ratingBar = itemView.findViewById(R.id.rbRating)
+            tv_authorName= itemView.findViewById(R.id.tvAuthorName)
             tv_collectionDescription = itemView.findViewById(R.id.tv_collectionDescription)
             itemView.setOnClickListener(this)
 
@@ -67,7 +67,7 @@ class OtherUsersCollectionAdapter(private val context: Context,
 
         fun bind(collection: Collection) {
             tv_collectionName.text = collection.getTitle()
-//            ratingBar.rating = collection.getRating()?.toFloat()!!
+            tv_authorName.text= "by: "+collection.getAuthor()?.username
             tv_collectionDescription.text = collection.getDescription()
         }
     }

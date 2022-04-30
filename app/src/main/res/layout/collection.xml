@@ -2,47 +2,52 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:id="@+id/collection"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="150dp"
+    android:paddingBottom="30dp"
+    android:layout_marginBottom="20dp"
+    android:background="@drawable/roundcornerflashcard">
+
 
     <TextView
         android:id="@+id/tv_collectionName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:layout_margin="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:textStyle="bold"
+        android:fontFamily="sans-serif-light"
+        android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.504" />
 
     <TextView
         android:id="@+id/tv_collectionDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:text="TextView"
-        android:layout_margin="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
+        android:textSize="15sp"
+
         android:textStyle="bold"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_collectionName" />
+
+    <TextView
+        android:id="@+id/tvAuthorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="alooo"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--    <RatingBar-->
-<!--        android:id="@+id/rbRating"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:isIndicator="true"-->
-<!--        android:numStars="5"-->
-<!--        android:rating="4"-->
-<!--        android:stepSize="0.5"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

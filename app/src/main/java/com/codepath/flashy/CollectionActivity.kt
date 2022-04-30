@@ -25,7 +25,6 @@ class CollectionActivity : AppCompatActivity() {
     lateinit var rvFlashcard: RecyclerView
     lateinit var flashcardAdapter:FlashcardAdapter
     lateinit var collection: Collection
-    lateinit var ratingBar: RatingBar
     val displayedFlashcards:ArrayList<Flashcard> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,16 +65,6 @@ class CollectionActivity : AppCompatActivity() {
             }
         }
 
-//        findViewById<Button>(R.id.btnDone).setOnClickListener {
-//            // initiating a rating bar
-//            ratingBar = findViewById(R.id.rbVoteAvarage)
-//            // get a rating number from the rating bar
-//            var ratingNum: Number = ratingBar.rating
-//
-//            updateRatingCollection(collectionID, ratingNum)
-//
-//            finish()
-//        }
     }
 
     private fun createFlashCard(front: String, back: String, needToLearn: Boolean, collectionID: String) {
