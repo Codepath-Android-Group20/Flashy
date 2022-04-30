@@ -83,6 +83,7 @@ open class MyCollectionFragment : Fragment() {
         val query: ParseQuery<Collection> = ParseQuery.getQuery(Collection::class.java)
 
         query.include(Collection.KEY_AUTHOR)
+        query.addDescendingOrder("createdAt")
         query.findInBackground(object: FindCallback<Collection> {
             override fun done(collections: MutableList<Collection>?, e: ParseException?) {
                 if (e!=null){
