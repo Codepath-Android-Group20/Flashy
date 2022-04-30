@@ -6,7 +6,6 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Flashy">
         <activity
@@ -14,6 +13,20 @@
             android:exported="false"
             android:label="@string/title_activity_other_users_collection"
             android:theme="@style/Theme.Flashy.NoActionBar" />
+
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Flashy.WelcomeTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
+
         <activity
             android:name=".CreateCollectionActivity"
             android:exported="false" />
@@ -42,17 +55,13 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+        
         <activity
             android:name=".ViewCollectionActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
