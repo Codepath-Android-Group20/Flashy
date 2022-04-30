@@ -43,9 +43,13 @@ class CollectionActivity : AppCompatActivity() {
         queryFlascard()
 
         findViewById<Button>(R.id.btn_quiz).setOnClickListener {
-            val intent = Intent(this, QuizActivity::class.java)
-            intent.putParcelableArrayListExtra("Collection", displayedFlashcards)
-            startActivity(intent)
+            if (displayedFlashcards.size != 0) {
+                val intent = Intent(this, QuizActivity::class.java)
+                intent.putParcelableArrayListExtra("Collection", displayedFlashcards)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "This collection is empty", Toast.LENGTH_SHORT).show()
+            }
         }
 
         findViewById<Button>(R.id.btnDone).setOnClickListener{
@@ -97,7 +101,7 @@ class CollectionActivity : AppCompatActivity() {
         query.findInBackground(object: FindCallback<Flashcard> {
             override fun done(flashcards: MutableList<Flashcard>?, e: ParseException?) {
                 if (e!=null){
-                    Log.e(MainActivity.TAG,"Error fetching flashcards")
+                    Log.e(TAG,"Error fetching flashcards")
                 }else {
                     if (flashcards != null){
                         displayedFlashcards.addAll(flashcards)
