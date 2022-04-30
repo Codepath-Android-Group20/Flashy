@@ -1,5 +1,6 @@
 package com.codepath.flashy
 
+import android.animation.ObjectAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AnimationUtils
@@ -16,6 +17,8 @@ class ViewCollectionActivity : AppCompatActivity() {
         val animationFlip = AnimationUtils.loadAnimation(this, R.anim.flip)
         View.startAnimation(animationFlip)
     }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

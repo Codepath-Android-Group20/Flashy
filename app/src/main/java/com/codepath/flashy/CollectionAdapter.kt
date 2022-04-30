@@ -47,9 +47,12 @@ class CollectionAdapter(private val context: Context,
     inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView), View.OnClickListener {
         val tv_collectionName: TextView
         val ratingBar: RatingBar
+
+
         init {
             tv_collectionName = itemView.findViewById(R.id.tv_collectionName)
             ratingBar = itemView.findViewById(R.id.rbRating)
+
             itemView.setOnClickListener(this)
 
         }
