@@ -35,7 +35,8 @@ A flashcard app that lets you create and view collections of custom flashcards.
 
 
 <p float="left">
-  <img src="https://i.imgur.com/7dDOCDu.gif" height="500" >
+  <img src="https://i.imgur.com/ejAwIP5.gif" height="500" >
+  <img src="https://i.imgur.com/xqJFRIS.gif" height="500" >
   <img src="https://imgur.com/bsv2mzz.gif" height= "500" >
   <img src="https://imgur.com/KEAKpft.gif" height="500" >
   <img src="https://i.imgur.com/HFD3y9y.gif" height="500" >
@@ -49,8 +50,8 @@ A flashcard app that lets you create and view collections of custom flashcards.
 
 - [x] User can sign up and log in to their own account
 - [ ] User can categorize the list of words into classes and subjects
-- [ ] User can create a collection flash cards
-- [ ] User can delete a collection of flashcards
+- [x] User can create a collection flash cards
+- [x] User can delete a collection of flashcards
 - [x] A flash card will have information one both sides of it. User can tap flash card to see other side.
 - [x] User can have multiple collections of flash cards.
 - [ ] Have a toggle indicate the word is learned

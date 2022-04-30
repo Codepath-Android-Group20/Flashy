@@ -1,6 +1,5 @@
 package com.codepath.flashy
 
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -8,7 +7,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.RatingBar
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,18 +18,18 @@ import com.parse.ParseObject
 import com.parse.ParseQuery
 
 
-class CollectionActivity : AppCompatActivity() {
+class OtherUsersCollectionActivity : AppCompatActivity() {
     lateinit var collectionID: String
     lateinit var rvFlashcard: RecyclerView
-    lateinit var flashcardAdapter:FlashcardAdapter
+    lateinit var flashcardAdapter:OtherUsersFlashcardAdapter
     lateinit var collection: Collection
     lateinit var ratingBar: RatingBar
     val displayedFlashcards:ArrayList<Flashcard> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_collection)
+        setContentView(R.layout.activity_other_users_collection)
         rvFlashcard= findViewById(R.id.rvFlashcard)
-        flashcardAdapter=FlashcardAdapter(this, displayedFlashcards)
+        flashcardAdapter=OtherUsersFlashcardAdapter(this, displayedFlashcards)
         collectionID = intent.getStringExtra(COLLECTION_ID_EXTRA).toString()
         val collectionTitle = intent.getStringExtra(COLLECTION_TITLE_EXTRA).toString()
         findViewById<EditText>(R.id.etCollectionName).setText(collectionTitle)
@@ -53,18 +51,7 @@ class CollectionActivity : AppCompatActivity() {
             finish()
         }
 
-        findViewById<Button>(R.id.btnAdd).setOnClickListener {
-            val front = findViewById<EditText>(R.id.etFront).text.toString()
-            val back = findViewById<EditText>(R.id.etBack).text.toString()
-            if (front.isNotEmpty() && back.isNotEmpty()) {
-                createFlashCard(front, back, true, collectionID)
-                findViewById<EditText>(R.id.etFront).text.clear()
-                findViewById<EditText>(R.id.etBack).text.clear()
-                Toast.makeText(this, "Flashcard is added", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Front and Back must not be empty", Toast.LENGTH_SHORT).show()
-            }
-        }
+
 
 //        findViewById<Button>(R.id.btnDone).setOnClickListener {
 //            // initiating a rating bar
@@ -92,9 +79,6 @@ class CollectionActivity : AppCompatActivity() {
                 // show toast to tell user something went wrong with saving post
             } else {
                 Log.i(TAG, "Succeessfully save flashcard")
-                displayedFlashcards.add(flashcard)
-                flashcardAdapter.notifyDataSetChanged()
-                Toast.makeText(this, "Flashcard Added", Toast.LENGTH_SHORT)
                 // TODO: resetting the EditText field to be empty
                 // TODO: reset the ImageView to empty
             }
@@ -125,22 +109,22 @@ class CollectionActivity : AppCompatActivity() {
         })
     }
 
-//    private fun updateRatingCollection(collectionID: String, ratingNum: Number) {
-//        val query = ParseQuery.getQuery<ParseObject>("Collection")
-//        // Retrieve the object by id
-//        // Retrieve the object by id
-//        query.getInBackground(collectionID) { collection, e ->
-//            if (e == null) {
-//                // Now let's update it with some new data. In this case, only cheatMode and score
-//                // will get sent to the Parse Cloud. playerName hasn't changed.
-//               collection.put("rating", ratingNum)
-//                collection.saveInBackground()
-//                Log.i(TAG, "Rating bar of $collectionID is updated")
-//            } else {
-//                Log.i(TAG, "rating bar of $collectionID fails")
-//            }
-//        }
-//    }
+    private fun updateRatingCollection(collectionID: String, ratingNum: Number) {
+        val query = ParseQuery.getQuery<ParseObject>("Collection")
+        // Retrieve the object by id
+        // Retrieve the object by id
+        query.getInBackground(collectionID) { collection, e ->
+            if (e == null) {
+                // Now let's update it with some new data. In this case, only cheatMode and score
+                // will get sent to the Parse Cloud. playerName hasn't changed.
+                collection.put("rating", ratingNum)
+                collection.saveInBackground()
+                Log.i(TAG, "Rating bar of $collectionID is updated")
+            } else {
+                Log.i(TAG, "rating bar of $collectionID fails")
+            }
+        }
+    }
 
     companion object{
         const val TAG="CollectionActivity"
